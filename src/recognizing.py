@@ -119,7 +119,7 @@ def start_recognition(model_path='face_recognition_model.h5',
             name = person_names.get(person_id, "Unknown")
             
             # Debug info
-            if confidence > 0.3:  # Show debug for significant predictions
+            if confidence > 0.8:  # Show debug for significant predictions
                 print(f"Prediction: index={predicted_idx}, confidence={confidence:.2f}, name={name}")
                 print(f"Available IDs in person_names: {list(person_names.keys())}")
 
@@ -187,4 +187,5 @@ def main():
     start_recognition(model_path, names_path, csv_path, location, confidence_threshold=confidence_threshold)
 
 if __name__ == "__main__":
+
     main()
